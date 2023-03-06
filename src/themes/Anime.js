@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import Card from '../components/Card';
 
@@ -46,6 +46,26 @@ const Anime = () => {
   const handleChoice = (card) => {
     choiceOne ? setChoiceTwo(card) : setChoiceOne(card);
   };
+
+  // reset choices and increase counter
+  const resetCounter = () => {
+    setChoiceOne(null);
+    setChoiceTwo(null);
+    setCounter((prevCounter) => prevCounter + 1);
+  };
+
+  // Compare 2 selected cards
+  useEffect(() => {
+    if (choiceOne && choiceTwo) {
+      if (choiceOne.src === choiceTwo.src) {
+        console.log('those cards match');
+        resetCounter();
+      } else {
+        console.log('those cards do not match');
+        resetCounter();
+      }
+    }
+  }, [choiceOne, choiceTwo]);
 
   return (
     <Div>
