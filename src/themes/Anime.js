@@ -3,27 +3,27 @@ import styled from 'styled-components';
 import Card from '../components/Card';
 
 const cardImages = [
-  { src: '/images/aki.jpg' },
-  { src: '/images/makima.jpg' },
-  { src: '/images/denji.jpg' },
-  { src: '/images/fushiguro.jpg' },
-  { src: '/images/gojou.jpg' },
-  { src: '/images/himeno.jpg' },
-  { src: '/images/hinata.jpg' },
-  { src: '/images/kakashi.jpg' },
-  { src: '/images/kilua.jpg' },
-  { src: '/images/naruto.jpg' },
-  { src: '/images/phil.jpg' },
-  { src: '/images/ray.jpg' },
-  { src: '/images/tenten.jpg' },
-  { src: '/images/youji.jpg' },
-  { src: '/images/Canary.jpg' },
-  { src: '/images/hisoka.png' },
-  { src: '/images/emma.jpg' },
-  { src: '/images/teamK.jpg' },
-  { src: '/images/satori.jpg' },
-  { src: '/images/itachi.jpg' },
-  { src: '/images/kenma.jpg' },
+  { src: '/images/aki.jpg', matched: false },
+  { src: '/images/makima.jpg', matched: false },
+  { src: '/images/denji.jpg', matched: false },
+  { src: '/images/fushiguro.jpg', matched: false },
+  { src: '/images/gojou.jpg', matched: false },
+  { src: '/images/himeno.jpg', matched: false },
+  { src: '/images/hinata.jpg', matched: false },
+  { src: '/images/kakashi.jpg', matched: false },
+  { src: '/images/kilua.jpg', matched: false },
+  { src: '/images/naruto.jpg', matched: false },
+  { src: '/images/phil.jpg', matched: false },
+  { src: '/images/ray.jpg', matched: false },
+  { src: '/images/tenten.jpg', matched: false },
+  { src: '/images/youji.jpg', matched: false },
+  { src: '/images/Canary.jpg', matched: false },
+  { src: '/images/hisoka.png', matched: false },
+  { src: '/images/emma.jpg', matched: false },
+  { src: '/images/teamK.jpg', matched: false },
+  { src: '/images/satori.jpg', matched: false },
+  { src: '/images/itachi.jpg', matched: false },
+  { src: '/images/kenma.jpg', matched: false },
 ];
 
 const Anime = () => {
@@ -58,14 +58,19 @@ const Anime = () => {
   useEffect(() => {
     if (choiceOne && choiceTwo) {
       if (choiceOne.src === choiceTwo.src) {
-        console.log('those cards match');
+        setCards((prevCards) => prevCards.map((card) => {
+          if (card.src === choiceOne.src) {
+            return { ...card, matched: true };
+          }
+          return card;
+        }));
         resetCounter();
       } else {
-        console.log('those cards do not match');
         resetCounter();
       }
     }
   }, [choiceOne, choiceTwo]);
+  console.log(cards);
 
   return (
     <Div>
