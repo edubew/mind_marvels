@@ -31,7 +31,7 @@ const Anime = () => {
   const [counter, setCounter] = useState(0);
   const [choiceOne, setChoiceOne] = useState(null);
   const [choiceTwo, setChoiceTwo] = useState(null);
-  const [disabled, setDisabled] = useState(false)
+  const [disabled, setDisabled] = useState(false);
 
   // randomise cards
   const mixCards = () => {
@@ -53,7 +53,7 @@ const Anime = () => {
     setChoiceOne(null);
     setChoiceTwo(null);
     setCounter((prevCounter) => prevCounter + 1);
-    setDisabled(false)
+    setDisabled(false);
   };
 
   // Compare 2 selected cards
@@ -90,6 +90,11 @@ const Anime = () => {
           />
         ))}
       </div>
+      <p>
+        Counter:
+        {' '}
+        {counter}
+      </p>
     </Div>
   );
 };
