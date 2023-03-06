@@ -2,9 +2,13 @@
 import React from 'react';
 import styled from 'styled-components';
 
-const Card = ({ card, handleChoice, flipped }) => {
+const Card = ({
+  card, handleChoice, flipped, disabled,
+}) => {
   const handleClick = () => {
-    handleChoice(card);
+    if (!disabled) {
+      handleChoice(card);
+    }
   };
 
   return (
@@ -30,15 +34,6 @@ const Div = styled.div`
     aspect-ratio: 1/1;
     border: 2px solid black;
     border-radius: 6px;
-  }
-
-    front__view {
-      transform: rotateY(90deg);
-      position: absolute;
-    }
-
-  .flipped .front__view {
-    transform: rotateY(0deg);
   }
 }
 `;

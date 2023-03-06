@@ -34,3 +34,13 @@ code {
 .flipped .front__view {
 transform: rotateY(0deg);
 }
+
+.back__view {
+  transition: all ease-in 0.3s;
+  transition-delay: 0s;
+}
+
+.flipped .back__view {
+  transform: rotateY(90deg);
+  transition-delay: 0s;
+}

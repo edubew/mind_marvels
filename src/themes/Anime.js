@@ -31,6 +31,7 @@ const Anime = () => {
   const [counter, setCounter] = useState(0);
   const [choiceOne, setChoiceOne] = useState(null);
   const [choiceTwo, setChoiceTwo] = useState(null);
+  const [disabled, setDisabled] = useState(false)
 
   // randomise cards
   const mixCards = () => {
@@ -52,11 +53,13 @@ const Anime = () => {
     setChoiceOne(null);
     setChoiceTwo(null);
     setCounter((prevCounter) => prevCounter + 1);
+    setDisabled(false)
   };
 
   // Compare 2 selected cards
   useEffect(() => {
     if (choiceOne && choiceTwo) {
+      setDisabled(true);
       if (choiceOne.src === choiceTwo.src) {
         setCards((prevCards) => prevCards.map((card) => {
           if (card.src === choiceOne.src) {
@@ -70,7 +73,6 @@ const Anime = () => {
       }
     }
   }, [choiceOne, choiceTwo]);
-  console.log(cards);
 
   return (
     <Div>
@@ -84,6 +86,7 @@ const Anime = () => {
             card={card}
             handleChoice={handleChoice}
             flipped={card === choiceOne || card === choiceTwo || card.matched}
+            disabled={disabled}
           />
         ))}
       </div>
