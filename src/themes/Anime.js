@@ -39,6 +39,8 @@ const Anime = () => {
       .sort(() => Math.random() - 0.5)
       .map((card) => ({ ...card, id: Math.random() }));
 
+    setChoiceOne(null);
+    setChoiceTwo(null);
     setCards(mixedCards);
     setCounter(0);
   };
@@ -73,6 +75,11 @@ const Anime = () => {
       }
     }
   }, [choiceOne, choiceTwo]);
+
+  // Automatically start a new game
+  useEffect(() => {
+    mixCards();
+  }, []);
 
   return (
     <Div>
