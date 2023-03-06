@@ -25,3 +25,12 @@ code {
     'Courier New',
     monospace;
 }
+
+.front__view {
+  transform: rotateY(90deg);
+  position: absolute;
+}
+
+.flipped .front__view {
+transform: rotateY(0deg);
+}

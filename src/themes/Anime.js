@@ -66,7 +66,7 @@ const Anime = () => {
         }));
         resetCounter();
       } else {
-        resetCounter();
+        setTimeout(() => resetCounter(), 1000);
       }
     }
   }, [choiceOne, choiceTwo]);
@@ -79,7 +79,12 @@ const Anime = () => {
 
       <div className="card__grid">
         {cards.map((card) => (
-          <Card key={card.id} card={card} handleChoice={handleChoice} />
+          <Card
+            key={card.id}
+            card={card}
+            handleChoice={handleChoice}
+            flipped={card === choiceOne || card === choiceTwo || card.matched}
+          />
         ))}
       </div>
     </Div>

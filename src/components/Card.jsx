@@ -2,7 +2,7 @@
 import React from 'react';
 import styled from 'styled-components';
 
-const Card = ({ card, handleChoice }) => {
+const Card = ({ card, handleChoice, flipped }) => {
   const handleClick = () => {
     handleChoice(card);
   };
@@ -10,7 +10,7 @@ const Card = ({ card, handleChoice }) => {
   return (
     <Div>
       <div className="card">
-        <article>
+        <article className={flipped ? 'flipped' : ''}>
           <img className="front__view" src={card.src} alt="Front view" />
           <img className="back__view" src="/images/cover.jpg" onClick={handleClick} alt="Back view" />
         </article>
@@ -22,19 +22,23 @@ const Card = ({ card, handleChoice }) => {
 export default Card;
 
 const Div = styled.div`
-article {
-    .front__view {
-      width: 12rem;
-      aspect-ratio: 1/1;
-      border: 2px solid black;
-      border-radius: 6px;
+.card {
+  position: relative;
+
+  img {
+    width: 12rem;
+    aspect-ratio: 1/1;
+    border: 2px solid black;
+    border-radius: 6px;
+  }
+
+    front__view {
+      transform: rotateY(90deg);
+      position: absolute;
     }
 
-    .back__view {
-      width: 12rem;
-      aspect-ratio: 1/1;
-      border: 2px solid black;
-      border-radius: 6px;
-    }
+  .flipped .front__view {
+    transform: rotateY(0deg);
   }
+}
 `;
