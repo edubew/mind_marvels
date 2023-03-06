@@ -29,6 +29,8 @@ const cardImages = [
 const Anime = () => {
   const [cards, setCards] = useState([]);
   const [counter, setCounter] = useState(0);
+  const [choiceOne, setChoiceOne] = useState(null);
+  const [choiceTwo, setChoiceTwo] = useState(null);
 
   // randomise cards
   const mixCards = () => {
@@ -38,6 +40,11 @@ const Anime = () => {
 
     setCards(mixedCards);
     setCounter(0);
+  };
+
+  // handle a choice
+  const handleChoice = (card) => {
+    choiceOne ? setChoiceTwo(card) : setChoiceOne(card);
   };
 
   return (
