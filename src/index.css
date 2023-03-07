@@ -25,3 +25,22 @@ code {
     'Courier New',
     monospace;
 }
+
+.front__view {
+  transform: rotateY(90deg);
+  position: absolute;
+}
+
+.flipped .front__view {
+transform: rotateY(0deg);
+}
+
+.back__view {
+  transition: all ease-in 0.2s;
+  transition-delay: 0s;
+}
+
+.flipped .back__view {
+  transform: rotateY(90deg);
+  transition-delay: 0s;
+}
