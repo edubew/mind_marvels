@@ -36,7 +36,7 @@ transform: rotateY(0deg);
 }
 
 .back__view {
-  transition: all ease-in 0.3s;
+  transition: all ease-in 0.2s;
   transition-delay: 0s;
 }
 

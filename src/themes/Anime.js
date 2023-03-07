@@ -13,17 +13,17 @@ const cardImages = [
   { src: '/images/kakashi.jpg', matched: false },
   { src: '/images/kilua.jpg', matched: false },
   { src: '/images/naruto.jpg', matched: false },
-  { src: '/images/phil.jpg', matched: false },
+  // { src: '/images/phil.jpg', matched: false },
   { src: '/images/ray.jpg', matched: false },
   { src: '/images/tenten.jpg', matched: false },
   { src: '/images/youji.jpg', matched: false },
   { src: '/images/Canary.jpg', matched: false },
-  { src: '/images/hisoka.png', matched: false },
+  // { src: '/images/hisoka.png', matched: false },
   { src: '/images/emma.jpg', matched: false },
-  { src: '/images/teamK.jpg', matched: false },
-  { src: '/images/satori.jpg', matched: false },
-  { src: '/images/itachi.jpg', matched: false },
-  { src: '/images/kenma.jpg', matched: false },
+  // { src: '/images/teamK.jpg', matched: false },
+  // { src: '/images/satori.jpg', matched: false },
+  // { src: '/images/itachi.jpg', matched: false },
+  // { src: '/images/kenma.jpg', matched: false },
 ];
 
 const Anime = () => {
@@ -113,7 +113,7 @@ text-align: center;
 
 .card__grid {
   display: grid;
-  grid-template-columns: repeat(6, 1fr);
+  grid-template-columns: repeat(4, 1fr);
   gap: 10px;
   margin-top: 40px;
 }
