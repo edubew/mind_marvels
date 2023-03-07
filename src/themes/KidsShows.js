@@ -2,7 +2,7 @@ import React from 'react';
 
 const KidsShows = () => (
   <div>
-    <hi>Coming Soon</hi>
+    <h1>Coming Soon</h1>
   </div>
 );
 
