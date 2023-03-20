@@ -1,27 +1,26 @@
+@import url('https://fonts.googleapis.com/css2?family=Shantell+Sans&display=swap');
+
 body {
   margin: 0;
-  font-family:
-    -apple-system,
-    BlinkMacSystemFont,
-    'Segoe UI',
-    'Roboto',
-    'Oxygen',
-    'Ubuntu',
-    'Cantarell',
-    'Fira Sans',
-    'Droid Sans',
-    'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  /* background: rgb(1, 1, 10); */
+  font-family: 'Shantell Sans', cursive;
 }
 
-code {
-  font-family:
-    source-code-pro,
-    Menlo,
-    Monaco,
-    Consolas,
-    'Courier New',
-    monospace;
+.front__view {
+  transform: rotateY(90deg);
+  position: absolute;
+}
+
+.flipped .front__view {
+transform: rotateY(0deg);
+}
+
+.back__view {
+  transition: all ease-in 0.2s;
+  transition-delay: 0s;
+}
+
+.flipped .back__view {
+  transform: rotateY(90deg);
+  transition-delay: 0s;
 }
