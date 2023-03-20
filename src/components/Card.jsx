@@ -30,9 +30,10 @@ const Div = styled.div`
   position: relative;
 
   img {
-    width: 12rem;
+    display: block;
+    width: 4.5rem;
     aspect-ratio: 1/1;
-    border: 2px solid black;
+    border: 1px solid #003152;
     border-radius: 6px;
   }
 }

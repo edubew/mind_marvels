@@ -70,8 +70,9 @@ const Div = styled.div`
 display: flex;
 
 main {
-    width: 100%;
-    padding: 20px;
+  width: 100%;
+  padding: 20px;
+  background: rgb(1, 1, 10);
 }
 
 .sidebar {

@@ -83,8 +83,8 @@ const Anime = () => {
 
   return (
     <Div>
-      <h1>Think and Link</h1>
-      <button type="submit" onClick={mixCards}>New Game</button>
+      <h1 className="title">Think and Link</h1>
+      <button className="reset__btn" type="submit" onClick={mixCards}>New Game</button>
 
       <div className="card__grid">
         {cards.map((card) => (
@@ -110,11 +110,24 @@ export default Anime;
 
 const Div = styled.div`
 text-align: center;
+color: #48cae4;
+
+.reset__btn {
+  padding: 12px;
+  background: transparent;
+  color: #fff;
+  font-weight: bolder;
+  border-radius: 2px;
+  box-shadow: 0 10px 10px 2px #48cae4;
+  font-size: 14px;
+}
 
 .card__grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 10px;
-  margin-top: 40px;
+  grid-template-columns: repeat(6, 1fr);
+  grid-column-gap: 0px;
+  gap: 5px;
+  width: 35%;
+  margin: 2% 30% 0;
 }
 `;
